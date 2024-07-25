@@ -99,9 +99,9 @@ const menuData = ref({
         { label: 'Tabs', src: 'Tab' },
         { label: 'Tooltips', src: 'Tooltip' },
         { label: 'Toasts', src: 'Toast' },
-        { label: 'Swipers', src: 'Swiper' }
-        // { label: 'Calendar', src: '' },
-        // { label: 'Datepicker', src: '' }
+        { label: 'Swipers', src: 'Swiper' },
+        { label: 'Calendar', src: 'Calendar' },
+        { label: 'Datepickers', src: 'Datepicker' }
     ]
 });
 

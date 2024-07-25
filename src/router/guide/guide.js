@@ -66,17 +66,17 @@ export default [
                 meta: {
                     title: 'Swipers'
                 }
+            },
+            {
+                path: '/guide/calendar',
+                name: 'Calendar',
+                component: () => import('@/pages/guide/GuideCalendar.vue')
+            },
+            {
+                path: '/guide/datepicker',
+                name: 'Datepicker',
+                component: () => import('@/pages/guide/GuideDatepicker.vue')
             }
-            // {
-            //     path: '/guide/calendar',
-            //     name: 'calendar',
-            //     component: () => import('@/pages/guide/GuideCalendar.vue')
-            // },
-            // {
-            //     path: '/guide/datepicker',
-            //     name: 'datepicker',
-            //     component: () => import('@/pages/guide/GuideDatepicker.vue')
-            // }
         ]
     },
     {
