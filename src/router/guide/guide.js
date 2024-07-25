@@ -58,12 +58,15 @@ export default [
                 meta: {
                     title: 'Toasts'
                 }
+            },
+            {
+                path: '/guide/swiper',
+                name: 'Swiper',
+                component: () => import('@/pages/guide/GuideSwiper.vue'),
+                meta: {
+                    title: 'Swipers'
+                }
             }
-            // {
-            //     path: '/guide/swiper',
-            //     name: 'swiper',
-            //     component: () => import('@/pages/guide/GuideSwiper.vue')
-            // },
             // {
             //     path: '/guide/calendar',
             //     name: 'calendar',

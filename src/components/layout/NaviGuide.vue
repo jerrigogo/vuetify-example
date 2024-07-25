@@ -40,7 +40,7 @@
                         >
                             <router-link
                                 class="navi-link"
-                                :to="{ path: menu.src }"
+                                :to="{ name: menu.src }"
                                 @click="pageMove(menu.src)"
                                 :tabindex="tabIndex"
                             >
@@ -98,10 +98,10 @@ const menuData = ref({
         { label: 'Dropdowns', src: 'Dropdown' },
         { label: 'Tabs', src: 'Tab' },
         { label: 'Tooltips', src: 'Tooltip' },
-        { label: 'Toast', src: 'Toast' },
-        { label: 'Swipers', src: '' },
-        { label: 'Calendar', src: '' },
-        { label: 'Datepicker', src: '' }
+        { label: 'Toasts', src: 'Toast' },
+        { label: 'Swipers', src: 'Swiper' }
+        // { label: 'Calendar', src: '' },
+        // { label: 'Datepicker', src: '' }
     ]
 });
 
