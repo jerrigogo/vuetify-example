@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>Vuetify Example</title>
+    </head>
+
+    <body>
+        <div id="app" class="wrap"></div>
+        <script type="module" src="/src/main.js"></script>
+        <script>
+            // device 체크
+            let userAgent = navigator.userAgent;
+            let html = document.querySelector('html');
+            let device = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+
+            if (device.test(userAgent)) {
+                html.classList.add('mobile');
+            } else {
+                html.classList.remove('mobile');
+            }
+        </script>
+    </body>
+</html>

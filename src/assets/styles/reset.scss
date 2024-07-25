@@ -1,0 +1,173 @@
+:root {
+    color-scheme: light only;
+}
+
+* {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    word-break: keep-all;
+    resize: none;
+    appearance: none;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-appearance: none;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: toRem(14);
+    color: #212121;
+    line-height: 1.5;
+    letter-spacing: toRem(-0.06);
+    user-select: none;
+    overflow: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+input,
+textarea,
+button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: none;
+}
+
+input[type='number'] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul,
+ol,
+dl,
+li,
+dt,
+dd {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 0;
+    margin: 0;
+}
+
+caption {
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: toRem(1);
+    height: toRem(1);
+    font-size: toRem(1);
+    clip: rect(toRem(1), toRem(1), toRem(1), toRem(1));
+    pointer-events: none;
+}
+
+.link-text {
+    color: #007aff;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 361px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: toRem(10);
+        height: toRem(10);
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: toRem(2) solid transparent;
+        border-radius: toRem(10);
+        box-shadow: inset toRem(6) toRem(6) 0 rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: inset toRem(6) toRem(6) 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+}

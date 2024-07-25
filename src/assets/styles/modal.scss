@@ -1,0 +1,118 @@
+/***** modal layout *****/
+.modal-layout.v-dialog {
+    .v-overlay__scrim {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .v-overlay__content {
+        width: toRem(600);
+        margin: 0;
+
+        .modal-wrap.v-card {
+            border-radius: toRem(18);
+            background: #fff;
+        }
+
+        .v-card-actions {
+            display: block;
+            padding: 0;
+        }
+    }
+
+    .modal-header {
+        padding: toRem(24);
+
+        h1 {
+            font-size: toRem(24);
+            font-weight: 700;
+        }
+    }
+
+    .modal-body {
+        max-height: calc(100vh - toRem(228));
+        font-size: toRem(16);
+        padding: toRem(24);
+        overflow-y: auto;
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: stretch;
+        gap: toRem(10);
+        padding: toRem(24);
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .modal-close {
+        position: absolute;
+        top: toRem(22);
+        right: toRem(20);
+        width: toRem(40);
+        height: toRem(40);
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: calc(50% - toRem(1));
+            left: calc(50% - toRem(12));
+            width: toRem(24);
+            height: toRem(2);
+            background: #212121;
+            transform: rotateZ(45deg);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: calc(50% - toRem(12));
+            left: calc(50% - toRem(1));
+            width: toRem(2);
+            height: toRem(24);
+            background: #212121;
+            transform: rotateZ(45deg);
+        }
+    }
+
+    &.small {
+        .v-overlay__content {
+            width: toRem(350);
+        }
+
+        .modal-body {
+            padding: toRem(40) toRem(24) toRem(24);
+        }
+    }
+
+    &.v-bottom-sheet.bottom {
+        .v-overlay__content {
+            align-self: unset;
+            left: auto;
+            right: auto;
+            width: toRem(600);
+            margin: 0;
+        }
+    }
+}
+
+/***** toast *****/
+.toast-wrap.v-snackbar {
+    margin-bottom: toRem(24);
+
+    .v-overlay__content {
+        min-width: toRem(300);
+        border-radius: toRem(8);
+        background: rgba(0, 0, 0, 0.7);
+
+        .v-snackbar__content {
+            font-size: toRem(14);
+            color: #fff;
+            text-align: center;
+        }
+    }
+}

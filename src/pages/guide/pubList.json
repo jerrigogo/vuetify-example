@@ -1,0 +1,235 @@
+[
+    {
+        "group": "메인",
+        "depth": ["메인"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "complete",
+        "startdate": "2024-08-01",
+        "compdate": "2024-08-10",
+        "etc": ["2024-08-12 배너 수정", "2024-08-15 오타 수정"]
+    },
+    {
+        "depth": ["메인", "정책안내", "개인정보처리방침"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "신용정보활용체제", "신용정보활용체제"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "신용정보활용체제", "고객권리안내문"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "영상정보처리기기 운영·관리방침"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "전자금융거래서비스이용약관"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "전자금융거래 기본약관"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "부당·과장광고 신고"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "본인정보 이용·제공", "본인정보 이용·제공 현황"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "본인정보 이용·제공", "수집개인정보현황(개인정보열람)"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "depth": ["메인", "정책안내", "불법채권추심 대응요령"],
+        "scrid": "TYLI0000000",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "except",
+        "startdate": "2024-08-01",
+        "compdate:": "",
+        "etc": []
+    },
+    {
+        "group": "보험상품",
+        "depth": ["보험상품", "건강보험"],
+        "scrid": "TYLI1000001",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "wait",
+        "startdate": "2024-09-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["보험상품", "종신보험/정기보험"],
+        "scrid": "TYLI1000002",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "except",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["보험상품", "연금보험/저축보험"],
+        "scrid": "TYLI1000003",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["보험상품", "어린이보험"],
+        "scrid": "TYLI1000004",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "group": "대출상품",
+        "depth": ["대출상품", "보험계약대출"],
+        "scrid": "TYLI2000001",
+        "scrtype": "P",
+        "manager": "담당자3",
+        "progress": "ing",
+        "startdate": "2024-10-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "부동산담보대출", "수호천사아파트론"],
+        "scrid": "TYLI2000002",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "임차보증금담보대출", "일반전세 보증금 대출"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자3",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "임차보증금담보대출", "임대아파트 전세보증금 대출"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자1",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "개인(신용)정보 조회동의"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자3",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "금리인하요구권", "개인대출"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "hold",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "금리인하요구권", "기업대출"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자2",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    },
+    {
+        "depth": ["대출상품", "금리인하요구권", "대출계약 철회권"],
+        "scrid": "TYLI2000003",
+        "scrtype": "P",
+        "manager": "담당자3",
+        "progress": "wait",
+        "startdate": "2024-08-01",
+        "compdate": "",
+        "etc": []
+    }
+]
