@@ -156,7 +156,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onBeforeMount, onUnmounted } from 'vue';
+import { ref, nextTick, computed, onBeforeMount, onUnmounted } from 'vue';
 import PubListJson from './pubList.json';
 
 const pubList = ref(computed(() => PubListJson));
@@ -328,7 +328,9 @@ const publeLaout = (_srt) => {
 };
 
 onBeforeMount(() => {
-    publeLaout('in');
+    nextTick(() => {
+        publeLaout('in');
+    });
 });
 
 onUnmounted(() => {
