@@ -262,14 +262,11 @@ const selectCal = (e, _srt) => {
                     }
                 }
 
-                // startCal.focus();
-
                 if (displayStart.value) {
                     startCal.addEventListener('animationend', () => {
                         startCal.querySelector('.date-item.sel').focus();
                     });
                 } else {
-                    // startCal.focus();
                     startCal.addEventListener('animationend', () => {
                         startCal.querySelector('.date-item.today').focus();
                     });
@@ -295,7 +292,15 @@ const selectCal = (e, _srt) => {
                     }
                 }
 
-                endCal.focus();
+                if (displayStart.value) {
+                    endCal.addEventListener('animationend', () => {
+                        endCal.querySelector('.date-item.sel').focus();
+                    });
+                } else {
+                    endCal.addEventListener('animationend', () => {
+                        endCal.querySelector('.date-item.today').focus();
+                    });
+                }
             }
         });
     }
