@@ -402,12 +402,16 @@ button {
     }
 
     .inp-box {
+        display: block;
         width: 100%;
+        min-height: toRem(48);
         font-size: toRem(16);
+        line-height: toRem(26);
         border: toRem(1) solid #212121;
         border-radius: toRem(4);
         padding: toRem(10) toRem(12);
 
+        &.placeholder,
         &::placeholder,
         &::-webkit-input-placeholder {
             color: #ccc;
@@ -426,10 +430,14 @@ button {
         }
     }
 
+    label.inp-box {
+        cursor: pointer;
+    }
+
     .cal-btn {
         position: absolute;
-        bottom: toRem(7);
-        right: toRem(7);
+        bottom: toRem(8);
+        right: toRem(8);
         width: toRem(32);
         height: toRem(32);
         border: toRem(1) solid #bbb;
@@ -478,5 +486,14 @@ button {
                 }
             }
         }
+    }
+}
+
+@keyframes combo-list {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

@@ -173,6 +173,7 @@
             font-family: Consolas, '맑은 고딕';
             color: #ccc;
             white-space: pre-wrap;
+            pointer-events: none;
 
             .import {
                 color: #ec7de3;

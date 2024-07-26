@@ -176,6 +176,24 @@ const setCalendar = (dateObj) => {
 
         nextArray.value.push(monthObj);
     }
+
+    nextTick(() => {
+        let calendar = document.querySelector(`#${props.id}`);
+        let dateItems = calendar.querySelectorAll('.date-item:not(.empty)');
+        let selIdx;
+        let todayIdx;
+
+        for (let i = 0; i < dateItems.length; i++) {
+            let itemClass = dateItems[i].classList;
+            if (itemClass.contains('sel')) {
+                selIdx = i;
+            } else if (itemClass.contains('today')) {
+                todayIdx = i;
+            }
+
+            keyCnt.value = selIdx ? selIdx : todayIdx;
+        }
+    });
 };
 
 // 이전/다음 달

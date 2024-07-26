@@ -1,24 +1,24 @@
 <template>
     <div :id="props.id" class="form-wrap datepicker">
         <div class="form-item">
-            <label :for="`${props.id}-start-input`" class="form-label">{{ opt.sLabel }}</label>
-            <input
-                type="tel"
+            <span class="form-label">{{ opt.sLabel }}</span>
+            <label
+                :for="`${props.id}-start-btn`"
                 :id="`${props.id}-start-input`"
-                name="start"
-                class="inp-box"
-                placeholder="날짜를 선택해 주세요"
-                v-model="displayStart"
-                readonly
-                @click="selectCal('start')"
-            />
+                :class="`inp-box ${!displayStart ? 'placeholder' : ''}`"
+                tabindex="0"
+                @keydown.enter="selectCal($event, 'start')"
+            >
+                {{ displayStart ? displayStart : '날짜를 선택해 주세요' }}
+            </label>
             <button
                 type="button"
                 :id="`${props.id}-start-btn`"
                 class="cal-btn"
                 aria-haspopup="dialog"
                 :aria-control="`${props.id}-calendar-start`"
-                @click="selectCal('start')"
+                tabindex="-1"
+                @click="selectCal($event, 'start')"
             >
                 <span class="sr-only">달력 보기</span>
             </button>
@@ -43,24 +43,24 @@
         </div>
 
         <div v-if="opt.type == 'period'" class="form-item">
-            <label :for="`${props.id}-end-input`" class="form-label">{{ opt.eLabel }}</label>
-            <input
-                type="tel"
+            <span class="form-label">{{ opt.eLabel }}</span>
+            <label
+                :for="`${props.id}-end-btn`"
                 :id="`${props.id}-end-input`"
-                name="end"
-                class="inp-box"
-                placeholder="날짜를 선택해 주세요"
-                v-model="displayEnd"
-                readonly
-                @click="selectCal('end')"
-            />
+                :class="`inp-box ${!displayEnd ? 'placeholder' : ''}`"
+                tabindex="0"
+                @keydown.enter="selectCal($event, 'end')"
+            >
+                {{ displayEnd ? displayEnd : '날짜를 선택해 주세요' }}
+            </label>
             <button
                 type="button"
                 :id="`${props.id}-end-btn`"
                 class="cal-btn"
                 aria-haspopup="dialog"
                 :aria-control="`${props.id}-calendar-end`"
-                @click="selectCal('end')"
+                tabindex="-1"
+                @click="selectCal($event, 'end')"
             >
                 <span class="sr-only">달력 보기</span>
             </button>
@@ -235,19 +235,18 @@ const compareDate = (type) => {
 };
 
 // 달력 버튼
-const selectCal = (_srt) => {
+const selectCal = (e, _srt) => {
     let winH = window.innerHeight;
     let boxInp = document.querySelector(`#${props.id}-${_srt}-input`);
     let boxH = boxInp.getBoundingClientRect().height;
     let boxT = boxInp.getBoundingClientRect().top;
-    let startBtn = document.querySelector(`#${props.id}-start-btn`);
-    let endBtn = document.querySelector(`#${props.id}-end-btn`);
+
+    prevFocus.value = e.target;
 
     if (_srt == 'start') {
         // 시작일
         showCalendar.value.firstCal = !showCalendar.value.firstCal;
         showCalendar.value.secondCal = false;
-        prevFocus.value = startBtn;
 
         nextTick(() => {
             if (showCalendar.value.firstCal) {
@@ -263,14 +262,24 @@ const selectCal = (_srt) => {
                     }
                 }
 
-                startCal.focus();
+                // startCal.focus();
+
+                if (displayStart.value) {
+                    startCal.addEventListener('animationend', () => {
+                        startCal.querySelector('.date-item.sel').focus();
+                    });
+                } else {
+                    // startCal.focus();
+                    startCal.addEventListener('animationend', () => {
+                        startCal.querySelector('.date-item.today').focus();
+                    });
+                }
             }
         });
     } else {
         // 종료일
         showCalendar.value.firstCal = false;
         showCalendar.value.secondCal = !showCalendar.value.secondCal;
-        prevFocus.value = endBtn;
 
         nextTick(() => {
             if (showCalendar.value.secondCal) {
@@ -300,7 +309,6 @@ const selectCal = (_srt) => {
     document.addEventListener('click', hideCalendar);
     // keyboard
     document.addEventListener('keydown', keyHideCal);
-    // });
 };
 
 // 달력 띄우기 전 요소 저장
@@ -354,31 +362,30 @@ const hideCalendar = (e) => {
 
 // keyboard 달력 밖으로 focus나갔을 때 닫기
 const keyHideCal = (e) => {
-    if (e.key == 'Tab') {
+    if (e.key == 'Tab' || e.key == 'Escape') {
         let focusEl = document.activeElement;
         let dialog = document.querySelector('.dialog-calendar');
         let focusEls = dialog.querySelectorAll('.date-item:not([tabindex="-1"]), .prev-cal, .next-cal, .cal-close');
         let firstEl = focusEls[0];
         let lastEl = focusEls[focusEls.length - 1];
 
-        if (!isMobile.value) {
-            if (
-                (e.shiftKey && focusEl == firstEl) ||
-                (e.shiftKey && focusEl == dialog) ||
-                (!e.shiftKey && focusEl == lastEl)
-            ) {
-                e.preventDefault();
-                showCalendar.value.firstCal = false;
-                showCalendar.value.secondCal = false;
-                prevFocus.value.focus();
+        if (
+            (e.shiftKey && focusEl == firstEl) ||
+            (e.shiftKey && focusEl == dialog) ||
+            (!e.shiftKey && focusEl == lastEl) ||
+            e.key == 'Escape'
+        ) {
+            e.preventDefault();
+            showCalendar.value.firstCal = false;
+            showCalendar.value.secondCal = false;
+            prevFocus.value.focus();
 
-                if (isMobile.value) {
-                    let body = document.querySelector('body');
-                    body.removeAttribute('style');
-                }
-
-                document.removeEventListener('keydown', keyHideCal);
+            if (isMobile.value) {
+                let body = document.querySelector('body');
+                body.removeAttribute('style');
             }
+
+            document.removeEventListener('keydown', keyHideCal);
         } else {
             if (e.shiftKey && (focusEl == firstEl || focusEl == dialog)) {
                 e.preventDefault();
